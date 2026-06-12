@@ -1,26 +1,65 @@
 @import "tailwindcss";
 
+/*
+ * Design system tokens — "DR Weather — Calima"
+ * Mirrored 1:1 from design.pen document variables (via Pencil get_variables).
+ * Do not hardcode these values in components — consume the tokens below.
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Colores — gradiente "Calima" */
+  --sky-1: #27557f; /* azul tropical, parte alta del gradiente */
+  --sky-2: #6e8497; /* azul desaturado, transición */
+  --dust-1: #d79a5b; /* ocre claro */
+  --dust-2: #b86c37; /* ocre sahariano, horizonte */
+  --accent: #f2a65a; /* acento ámbar cálido (polvo) */
+  --accent-strong: #e0763a; /* acento fuerte (badges, énfasis) */
+  --danger: #e8654a; /* alertas / estados de riesgo */
+
+  /* Superficies tipo "glass" */
+  --glass: #ffffff1a; /* fondo de cards translúcidas */
+  --glass-strong: #ffffff2b; /* variante con más opacidad */
+  --glass-border: #ffffff3d; /* borde sutil de las cards */
+
+  /* Texto */
+  --text: #ffffff; /* texto principal */
+  --text-dim: #ffffffb8; /* texto secundario */
+  --text-faint: #ffffff80; /* texto terciario / hints */
+
+  /* Tipografía (variables inyectadas por next/font en el layout) */
+  --font-head: var(--font-varela-round), system-ui, sans-serif; /* Varela Round */
+  --font-body: var(--font-nunito-sans), system-ui, sans-serif; /* Nunito Sans */
+
+  /* Gradiente de fondo de la pantalla (cielo → horizonte de calima) */
+  --gradient-calima: linear-gradient(
+    180deg,
+    var(--sky-1) 0%,
+    var(--sky-2) 45%,
+    var(--dust-1) 80%,
+    var(--dust-2) 100%
+  );
 }
 
+/* Exponer los tokens como utilidades de Tailwind v4 (bg-sky-1, text-text-dim, font-head, etc.) */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-sky-1: var(--sky-1);
+  --color-sky-2: var(--sky-2);
+  --color-dust-1: var(--dust-1);
+  --color-dust-2: var(--dust-2);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-danger: var(--danger);
+  --color-glass: var(--glass);
+  --color-glass-strong: var(--glass-strong);
+  --color-glass-border: var(--glass-border);
+  --color-text: var(--text);
+  --color-text-dim: var(--text-dim);
+  --color-text-faint: var(--text-faint);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-head: var(--font-head);
+  --font-body: var(--font-body);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  color: var(--text);
 }
