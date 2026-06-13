@@ -19,6 +19,13 @@
   --glass: #ffffff1a; /* fondo de cards translúcidas */
   --glass-strong: #ffffff2b; /* variante con más opacidad */
   --glass-border: #ffffff3d; /* borde sutil de las cards */
+  --surface-inset: #ffffff14; /* cajas internas (métricas, chips inactivos) */
+  --surface-faint: #ffffff10; /* superficie muy sutil (filas alternas) */
+  --track-muted: #ffffff26; /* segmentos inactivos de medidores */
+
+  /* Decorativos del diseño */
+  --temp-cool: #7fb9e0; /* extremo frío de la barra de rango de temperatura */
+  --haze: #ffd9a0; /* resplandor cálido del sol entre la calima */
 
   /* Texto */
   --text: #ffffff; /* texto principal */
@@ -51,6 +58,11 @@
   --color-glass: var(--glass);
   --color-glass-strong: var(--glass-strong);
   --color-glass-border: var(--glass-border);
+  --color-surface-inset: var(--surface-inset);
+  --color-surface-faint: var(--surface-faint);
+  --color-track-muted: var(--track-muted);
+  --color-temp-cool: var(--temp-cool);
+  --color-haze: var(--haze);
   --color-text: var(--text);
   --color-text-dim: var(--text-dim);
   --color-text-faint: var(--text-faint);
@@ -62,4 +74,5 @@
 body {
   font-family: var(--font-body);
   color: var(--text);
+  background: var(--sky-1);
 }
